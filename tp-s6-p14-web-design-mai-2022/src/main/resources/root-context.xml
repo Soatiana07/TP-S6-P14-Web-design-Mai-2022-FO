@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="org.postgresql.Driver" />
+        <property name="url" value="jdbc:postgresql://localhost:5432/final_web?useSSL=false" />
+        <property name="username" value="final_web" />
+        <property name="password" value="final_web" />
+    </bean>
+
+
+<!--    &lt;!&ndash; Hibernate 4 SessionFactory Bean definition &ndash;&gt;-->
+<!--    <bean id="hibernate4AnnotatedSessionFactory"-->
+<!--          class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">-->
+<!--        <property name="dataSource" ref="dataSource" />-->
+<!--        <property name="packagesToScan">-->
+<!--            <list>-->
+<!--                <value>com.example.springmvc.model</value>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--        <property name="hibernateProperties">-->
+<!--            <props>-->
+<!--                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>-->
+<!--                <prop key="hibernate.current_session_context_class">thread</prop>-->
+<!--                <prop key="hibernate.show_sql">false</prop>-->
+<!--            </props>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+
+<!--    <bean id="hibernateDao" class="com.example.springmvc.dao.HibernateDAO">-->
+<!--        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />-->
+<!--    </bean>-->
+
+</beans>
